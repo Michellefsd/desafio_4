@@ -1,14 +1,12 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
 // variables
 var cityName;
 var stateCode;
 var countryCode;
-var limit; //Funcion//
+var limit;
+var key = "d914d44ae03d7d2e6027704ad79b7714";
+var capitalesLatam = ["Buenos Aires", "La Paz", "Brasília", "Santiago de Chile", "Bogotá", "San José", "Havana", "Quito", "San Salvador", "Guatemala", "Port-au-Prince", "Tegucigalpa", "México DF", "Managua", "Panamá", "Asunción", "Lima", "Santo Domingo", "Montevideo", "Caracas"]; //Funcion//
 
 var obtener_datos_climaticos = function obtener_datos_climaticos(cityName) {
   var response, data;
@@ -35,7 +33,4 @@ var obtener_datos_climaticos = function obtener_datos_climaticos(cityName) {
     }
   });
 };
-
-var _default = key;
-exports["default"] = _default;
 //# sourceMappingURL=ej_4-2.dev.js.map

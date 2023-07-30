@@ -11,35 +11,22 @@
 # •	temperatura máxima. 
 # Puedes encontrar la documentación de la API en https://openweathermap.org/api
 
-
-
 import requests
-# import key from '../js/ej_4-2.js';
-# print key
 
 
 # esto futuramente lo cambiaremos por un array list o tupple de las capitales de LATAM
 city = input("Enter a City: \t")
+stateCode = input("Enter a StateCode: \t")
+countryCode  = input("Enter a countryCode: \t")
 
+key = ""
+url = "https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=d914d44ae03d7d2e6027704ad79b7714&unit=metric".format(city)
 
-url = "http://api.openweathermap.org/data/2.5/weather?q={city}&appid={key}&unit=metric".format(city)
-
-res.requests.get(url)
+res = requests.get(url)
 
 data = res.json()
 
-temp = data["main"]["temp"]
-wind_speed = data["wind"]["speed"]
-
-latitude = data["coord"]["lat"]
-longitude = data["coord"]["lon"]
-
-description = data["weather"][0]["description"]
-
-print[temp]
-print[wind_speed]
-print[latitude]
-print[longitude]
+print(data)
 
 
 #pregunto a Google como ejecutar un programa de Python en VSCode#
