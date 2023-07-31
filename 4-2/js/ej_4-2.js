@@ -1,4 +1,5 @@
-const capitalesLatam = [
+
+capitalesLatam = [
     "buenos aires", 
     "la paz", 
     "brasilia", 
@@ -21,9 +22,10 @@ const capitalesLatam = [
     "caracas"  
 ]
 
+const key = "10971b499be61b351760e8d57f0e3a4d"
 //Funcion//
-const capital = 'Santo Domingo'
-const obtener_datos_climaticos = async() => {
+console.log("heloo");
+const obtener_datos_climaticos = async(capital) => {
     const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${key}&units=metric&lang=es`)
     .then(response => response.json())
     .then((data) => {

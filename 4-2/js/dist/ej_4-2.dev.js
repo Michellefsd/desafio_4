@@ -1,10 +1,11 @@
 "use strict";
 
-var capitalesLatam = ["buenos aires", "la paz", "brasilia", "santiago de chile", "san jose,cr", "bogota", "habana", "quito", "san salvador", "guatemala", "Port-au-Prince", "tegucigalpa", "mexico,mx", "managua", "panama", "asuncion", "lima", "Santo Domingo", "montevideo", "caracas"]; //Funcion//
+capitalesLatam = ["buenos aires", "la paz", "brasilia", "santiago de chile", "san jose,cr", "bogota", "habana", "quito", "san salvador", "guatemala", "Port-au-Prince", "tegucigalpa", "mexico,mx", "managua", "panama", "asuncion", "lima", "Santo Domingo", "montevideo", "caracas"];
+var key = "10971b499be61b351760e8d57f0e3a4d"; //Funcion//
 
-var capital = 'Santo Domingo';
+console.log("heloo");
 
-var obtener_datos_climaticos = function obtener_datos_climaticos() {
+var obtener_datos_climaticos = function obtener_datos_climaticos(capital) {
   var response;
   return regeneratorRuntime.async(function obtener_datos_climaticos$(_context) {
     while (1) {
