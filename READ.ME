@@ -26,27 +26,6 @@ Plan Inicial: HAcerlo con javascript que tengo mas práctica y luego intentarlo 
 // Paso 3 - Averiguar los países de LATAM
 // Source: https://es.wikipedia.org/wiki/Am%C3%A9rica_Latina
 
-// Argentina
-// Bolivia
-// Brasil
-// Chile
-// Colombia
-// Costa Rica
-// Cuba
-// Ecuador
-// El Salvador
-// Guatemala
-// Haití
-// Honduras
-// México50​
-// Nicaragua
-// Panamá
-// Paraguay
-// Perú
-// República Dominicana
-// Uruguay
-// Venezuela
-
 // Paso 4 - Obtener sus Capitales:
 
 // Argentina =                Buenos Aires
@@ -59,7 +38,7 @@ Plan Inicial: HAcerlo con javascript que tengo mas práctica y luego intentarlo 
 // Ecuador =                  Quito
 // El Salvador =              San Salvador
 // Guatemala =                Guatemala
-// Haití =                    Port-au-Price
+// Haití =                    Port-au-Prince
 // Honduras =                 Tegucigalpa
 // México =                   México DF
 // Nicaragua =                Managua
@@ -90,24 +69,175 @@ solucion:
 #voy a esta otra pagina para encopntar el comando que falta 
 #https://www.w3schools.com/python/module_requests.asp
 "pip install requests"
-No me anduvo. Mire un tutorial corto de instalacion de requests y lo instale de la forma especificada con powershell :o (no se si eso es bueno)
-funciono el archivo python supero la fase de error deimport requests
+No me anduvo. Mire un tutorial corto de instalacion de requests y lo instale correctamente
+funciono el archivo python supero la fase de error de import requests
 
 
 paso 7 - 
 29/07/20233 23:29pm. 
-Voy a parar a descansar pero termine con esto en mi consola:
-'cod': 401, 'message': 'Please note that using One Call 3.0 requires a separate subscription to the One Call 
-by Call plan. Learn more here https://openweathermap.org/price. If you have a valid subscription to the One Call by Call plan, but still receive this error, then please see https://openweathermap.org/faq#error401 for more info.+
-y esto es lo que dice: 
+me voy a dormir.
 
-API calls return an error 401
 
-You can get the error 401 in the following cases:
+30/07/2023 10:30 am: Retomo
+Hoy volvi a retomar con javascript.
 
-    You did not specify your API key in API request.
-    Your API key is not activated yet. Within the next couple of hours, it will be activated and ready to use.
-    You are using wrong API key in API request. Please, check your right API key in personal account.
-    You are using a Free subscription and try requesting data available in other subscriptions . For example, 16 days/daily forecast API, any historical weather data, Weather maps 2.0, etc). Please, check your subscription in your personal account.
+1 -  Probe geocoding API en una api q ya tenia hecha y funciono me retorno la lat y longitud
+hice un array en javascript con todas las capitales y sus codigos internacionales, 
+const capitalesLatam = [
+    "BuenosAires,AR", 
+    "LaPaz,BO", 
+    "Brasilia,BR", 
+    "Santiago,Cl", 
+    "Bogota,CO", 
+    "LaHabana,CU", 
+    "Quito,EC",  
+    "Guatemala,GT",  
+    "Tegucigalpa,HN", 
+    "Mexico,MX", 
+    "Managua,NI", 
+    "Panama,PA", 
+    "Asuncion,PY", 
+    "Lima,PE", 
+    "Montevideo,UY", 
+    "Caracas,Ve"  
+]
+luego modifique el array, lo simplifique
 
-    Solo voy a esperar hasta mañana yy soltar
+Plan Modificado: Ahora hago Javascript y Python paralelos
+
+
+voy a aislar obtener_datos_climaticos() y agregarle la lat y lon manualmente 
+a ver si hay algun error en esa request
+efectivamente no tengo permisos para acceder a esta parte . voy a mirar un video de python para descansar:
+https://www.youtube.com/watch?v=9P5MY_2i7K8
+https://www.youtube.com/watch?v=GXrDEA3SIOQ&t=531s
+
+Logre con otra api_key usando el ejemplo que me mandaron por mail hacer el api request necesario para extraer toda la info en js. 
+Ahora me tengo que organizar:
+
+LOgros: api requests exitosas en js y python
+Tambien me doy cuenta que geocode ya no es necesario.
+
+--------------- PARTE 2 -------------
+
+tengo el acceso a la data en python y en javascript y el codigo desordenado y lleno de pruebas encapsuladas en comentarios: 
+voy a borrar las pruebas y a ordenar el codigo.
+
+ok son las 16:30 y logre esto en python:
+me falta la descripcion
+Montevideo
+UY
+17.51
+1017
+63
+18.01
+19.84
+
+volvi. son 16:47
+16:51 estoy llorando de la emocion. este es el resultado obtenido:
+
+Ciudad: Montevideo, país: UY, descripción del clima: cielo claro, 
+sensación térmica: 17.51, presión: 1017, humedad: 63, 
+temperatura mínima: 18.01, temperatura máxima: 19.84
+
+
+son las 17:51 y tengo hecho en javascript y python la funcion que trae 
+los datos de la ciudad que recibe como parametro.
+
+
+--------------DUDAS-------------------------------
+no entiendo para que escribir un pais si igual debo retornar 
+un documento con todas las capitales latam y su info.
+
+como quiere que le retorne el documento? 
+como un dictionario, list, etc?
+
+quizas la continuacion del ej 2 lo deje para despues de sacarme las dudas de como seguir
+
+ej 3. hago un select con options y la q se elija devuelve la info en una pag. index.html 
+
+mi approach fue un poco caotico lo fui escribiendo a tiempo real y tengo 300 lineas de 
+codigo explicando las ideas que iban surgiendo y como estas se iban adaptando a la realidd 
+q no era igual que la expectativa y como encontre diferentes formas de abordarlo entre q 
+empezaba y luego estaba en un determinado punto y entonces cambiaba el rumbo de la 
+aproximcion
+
+Que significa que quiere que use scripts?
+en este video usan scripts hay q verlo:
+https://www.youtube.com/watch?v=PWZKTWJ9bJE
+
+este habla de variables de entorno en python 
+https://www.youtube.com/watch?v=w-V1pMrGAjc
+me interesan los pasos 2 y 5.
+
+
+le pregunte a chatGPT
+al cual me devolvio esto:
+import requests
+
+def obtener_datos_climaticos(ciudad):
+    # Sustituye 'TU_API_KEY' por tu propia API Key de OpenWeatherMap
+    api_key = 'TU_API_KEY'
+    url = f'http://api.openweathermap.org/data/2.5/weather?q={ciudad}&lang=es&appid={api_key}'
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+
+        nombre_ciudad = data['name']
+        pais = data['sys']['country']
+        descripcion_clima = data['weather'][0]['description']
+        sensacion_termica = data['main']['feels_like']
+        presion = data['main']['pressure']
+        humedad = data['main']['humidity']
+        temp_minima = data['main']['temp_min']
+        temp_maxima = data['main']['temp_max']
+
+        # Devuelve la información en formato de cadena separada por puntos y comas
+        return f'{nombre_ciudad};{pais};{descripcion_clima};{sensacion_termica};{presion};{humedad};{temp_minima};{temp_maxima}'
+
+    except requests.exceptions.RequestException:
+        return f'Error al obtener los datos climáticos para {ciudad}'
+
+def obtener_datos_capitales_latam():
+    # Lista de capitales de LATAM en español
+    capitales_latam = [
+        'Buenos Aires', 'Santiago', 'Bogotá', 'Quito', 'Caracas', 'Lima', 'La Paz', 'Brasilia',
+        'San José', 'Ciudad de México', 'Ciudad de Panamá', 'Asunción', 'Lima', 'Montevideo', 'Quito',
+        'Caracas', 'La Habana'
+    ]
+
+    datos_climaticos_capitales = []
+    for capital in capitales_latam:
+        datos = obtener_datos_climaticos(capital)
+        datos_climaticos_capitales.append(datos)
+
+    # Guarda los datos en un archivo
+    with open('datos_climaticos_capitales_latam.csv', 'w') as file:
+        file.write('Nombre Capital;País;Descripción Clima;Sensación Térmica;Presión;Humedad;Temp Min;Temp Max\n')
+        for datos in datos_climaticos_capitales:
+            file.write(datos + '\n')
+
+if __name__ == "__main__":
+    obtener_datos_capitales_latam()
+
+
+
+
+ caramba... me siento boba de haber intentado hacerlo sola.
+ de cualquier modo dejare mi codigo y tomare algunas cosas del codigo sugerido
+
+Le pregunte a un amigo programador mis dudas y me dijo q 
+tampoco le quedaba claro a el que querian si una lista de 
+todas las capitales o el nombre del pais
+me empezo a hablar de grabar a csv 
+y me tiro este pique:
+1° aprende a grabar en disco con python un txt normal
+2° aprende csv
+confirmare las necesidades del proyecto en la reunion
+
+
+KEY = "10971b499be61b351760e8d57f0e3a4d" python
+const key = "10971b499be61b351760e8d57f0e3a4d"  javascript
+
+reviso capital por capital para arreglar la lista

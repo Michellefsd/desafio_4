@@ -1,36 +1,40 @@
-// variables
-let cityName;
-let stateCode;
-let countryCode;
-let limit;
-const key = "d914d44ae03d7d2e6027704ad79b7714";
-
 const capitalesLatam = [
-    "Buenos Aires", 
-    "La Paz", 
-    "Brasília", 
-    "Santiago de Chile", 
-    "Bogotá", "San José", 
-    "Havana", 
-    "Quito", 
-    "San Salvador", 
-    "Guatemala", 
+    "buenos aires", 
+    "la paz", 
+    "brasilia", 
+    "santiago de chile",
+    "san jose,cr", 
+    "bogota", 
+    "habana", 
+    "quito",  
+    "san salvador",
+    "guatemala", 
     "Port-au-Prince", 
-    "Tegucigalpa", 
-    "México DF", 
-    "Managua", 
-    "Panamá", 
-    "Asunción", 
-    "Lima", 
-    "Santo Domingo", 
-    "Montevideo", 
-    "Caracas"  
+    "tegucigalpa", 
+    "mexico,mx", 
+    "managua", 
+    "panama", 
+    "asuncion", 
+    "lima", 
+    "Santo Domingo",
+    "montevideo", 
+    "caracas"  
 ]
 
 //Funcion//
-const obtener_datos_climaticos = async(cityName) => {
-    const response = await fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${stateCode},${countryCode}&appid=${key}`);
-    const data = await response.json();
-    return data;
+const capital = 'Santo Domingo'
+const obtener_datos_climaticos = async() => {
+    const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${capital}&appid=${key}&units=metric&lang=es`)
+    .then(response => response.json())
+    .then((data) => {
+        const capital = data['name']
+        const pais = data['sys']['country']
+        const descripcion = data['weather'][0]['description']
+        const sensacion = data['main']['feels_like']
+        const presion = data['main']['pressure']
+        const humedad = data['main']['humidity']
+        const max = data['main']['temp_max']
+        const min = data['main']['temp_min']
+        console.log("Ciudad: " + capital + ", país: " + pais + ", descripción del clima: " + descripcion + ", sensación térmica: " + sensacion + ", presión: " + presion + ", humedad: " + humedad + ", temperatura mínima: " + min + ", temperatura máxima: " + max + ".")
+    })
 }
-
