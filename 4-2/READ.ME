@@ -112,7 +112,8 @@ efectivamente no tengo permisos para acceder a esta parte . voy a mirar un video
 https://www.youtube.com/watch?v=9P5MY_2i7K8
 https://www.youtube.com/watch?v=GXrDEA3SIOQ&t=531s
 
-Logre con otra api_key usando el ejemplo que me mandaron por mail hacer el api request necesario para extraer toda la info en js. 
+Logre con otra api_key usando el ejemplo que me mandaron por mail hacer el api request necesario
+ para extraer toda la info en js. 
 Ahora me tengo que organizar:
 
 LOgros: api requests exitosas en js y python
@@ -120,7 +121,8 @@ Tambien me doy cuenta que geocode ya no es necesario.
 
 --------------- PARTE 2 -------------
 
-tengo el acceso a la data en python y en javascript y el codigo desordenado y lleno de pruebas encapsuladas en comentarios: 
+tengo el acceso a la data en python y en javascript y el codigo desordenado y 
+lleno de pruebas encapsuladas en comentarios: 
 voy a borrar las pruebas y a ordenar el codigo.
 
 ok son las 16:30 y logre esto en python:
@@ -173,6 +175,9 @@ me interesan los pasos 2 y 5.
 
 le pregunte a chatGPT
 al cual me devolvio esto:
+
+______________________________________________________________________
+
 import requests
 
 def obtener_datos_climaticos(ciudad):
@@ -221,7 +226,7 @@ def obtener_datos_capitales_latam():
 if __name__ == "__main__":
     obtener_datos_capitales_latam()
 
-
+_________________________________________________________________________________
 
 
  caramba... me siento boba de haber intentado hacerlo sola.
@@ -231,7 +236,7 @@ Le pregunte a un amigo programador mis dudas y me dijo q
 tampoco le quedaba claro a el que querian si una lista de 
 todas las capitales o el nombre del pais
 me empezo a hablar de grabar a csv 
-y me tiro este pique:
+y me tiro esta idea:
 1° aprende a grabar en disco con python un txt normal
 2° aprende csv
 confirmare las necesidades del proyecto en la reunion
@@ -253,27 +258,23 @@ pasos propuestos en este video:
 1- en terminal "env" muestra las variables de entorno?
 2- en terminal "export KEY=9640936096"
 3- en ej_4-2.py import os
-4- ,,, para empezar el 1- no me anda como dice asi q me voy a ver otro de los de la lista
+4- ,,, 
+para empezar el 1- no me anda como dice asi q me voy a ver otro de los de la lista
 
-ya mire video sde el y me gusta es muy prolijo y tiene un ingles claro.
+ya mire videos de el y me gusta es muy prolijo y tiene un ingles claro.
 https://www.youtube.com/watch?v=vcDfNvC6Ui4
 el propone: 
 1- en terminal: "setx API_KEY 8755848487"
 2- en el archivo python 
 import os
 api_key=os.getenv("API_KEY")
-Esto me funciono
+Esto me funciono.
 entre a powershell y accedi a esta carpeta para ver si esta mi variable de entorno
 no he logrado leer la variable de entorno.
 
-
-entre en python y organize el codigo para que te pregunte 
-al entrar si deseas acceder a una capital o todas de latam
-
-voy a reordenar los archivos y separar carpetas dentro de cada desafio para cada ejercicio
-
-siguiendo con las variables de entorno vi este video
+luego vi este video
 https://www.youtube.com/watch?v=IolxqkL7cD8
+
 
 y entre a: panel de control => sistemas y seguridad => sistema => (a la derecha en mi pc)
 configuracion avanzada del sistema => variables de entorno   
@@ -285,6 +286,11 @@ Aqui se explica la necesidad de reiniciar el editor de codigo: probemos.
 Esta bien con esto comprobe que el video anterior ya me habia proporcionado 
 la info correcta solo me faltaba refrescar
 puedo acceder a la informacion con mi API_KEY protegida como variable de entorno en python
+
+entre en python y organize el codigo para que te pregunte 
+al entrar si deseas acceder a una capital o todas de latam
+
+voy a reordenar los archivos y separar carpetas dentro de cada desafio para cada ejercicio
 
 ahora:
 1- puedo ver como acceder a mi variable de entorno en javascript... 
@@ -304,12 +310,15 @@ sin librerias o frameworks complejos.
 
 copio textual la parte final de la charla:
 
+______________________________________________________________________
+
 YO:
 ok. me queda mas claro.  En el "Ejercicio 3, cuando dice valoramos el uso de scripts 
 se refiere a que prefieren que no usemos frameworks... o librerias... como panda.. no? 
 y en el ej2.... puedes explicarme como guardo archivos en un csv?
-
+_________________
 me devolvio esto: 
+_________________
 Exacto, cuando se menciona que "valoramos el uso de scripts" en el "Ejercicio 3," 
 se refiere a que prefieren que no utilices frameworks o bibliotecas complejas 
 como pandas para resolver el problema. En lugar de eso, lo ideal es que escribas un 
@@ -359,3 +368,8 @@ Si estás trabajando con JavaScript, también es posible guardar datos en format
 utilizando bibliotecas específicas, como "papaparse" o "fast-csv," 
 pero para mantenerlo simple y sin usar bibliotecas adicionales, 
 puedes escribir los datos directamente en un archivo de texto plano en el formato deseado.
+
+_____________________________________________________________________________________________
+
+hoy hice la pagina index.html termine el desafio 2 revise todos los codigos,
+acomode las documentaciones, hice el ej1 del desafio 4 en python.
