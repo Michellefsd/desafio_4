@@ -5,9 +5,11 @@
 # El programa debe devolver un documento separado por puntos y comas de todas las capitales con datos como:
 
 #Importo esta libreria para hacer requests
-import requests
 # importo os para acceder a mi variable de entorno
+# importo csv
+import requests
 import os
+import csv
 
 # base de la url
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
@@ -66,18 +68,35 @@ def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
     
     # aqui expongo la información
     print("Ciudad: " + capital + ", país: " + pais + ", descripción del clima: " + descripcion + ", sensación térmica: " + str(sensacion) + "°, presión: " + str(presion) + "hPa, humedad: " + str(humedad) + "%, temperatura mínima: " + str(min) + "°, temperatura máxima: " + str(max) + "°. \n")
+   
+    return {
+        "Capital": capital,
+        "País": pais,
+        "Descripción": descripcion,
+        "Sensación": str(sensacion),
+        "Presión": str(presion),
+        "Humedad": str(humedad),
+        "Máx": str(max),
+        "Mín": str(min),
+    }
 
- 
 def obtener_datos_capitales():
- 
     datos_climaticos_capitales = []
     for capital in capitalesLatam:
         datos = obtener_datos_climaticos_de_solo_una_ciudad(capital)
+        datos_climaticos_capitales.append(datos)
 
+    with open('datos_climaticos_latam.csv', 'w', newline='', encoding='utf-8') as file:
+        campos = ['Capital', 'País', 'Descripción', 'Sensación', 'Presión', 'Humedad', 'Máx', 'Mín']
+        writer = csv.DictWriter(file, fieldnames=campos, delimiter=';')
+        writer.writeheader()
+        writer.writerows(datos_climaticos_capitales)
 if userWants == "2" :
     CITY = input("Elige una capital de latinoamerica: EJ: 'Montevideo' \n")
     obtener_datos_climaticos_de_solo_una_ciudad(CITY)
 elif userWants == "1":
     obtener_datos_capitales()
-else: "Sorry Try Again"
+else: 
+    obtener_datos_capitales()
+
 
