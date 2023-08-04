@@ -84,7 +84,7 @@ def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
         "Mín": str(min),
     }
 
-def obtener_datos_capitales():
+def obtener_datos_climaticos():
     # datos_climaticos_capitales fue sugerido por chatGPT
     datos_climaticos_capitales = []
     for capital in capitalesLatam:
@@ -109,9 +109,9 @@ if userWants == "2" :
     obtener_datos_climaticos_de_solo_una_ciudad(CITY)
 elif userWants == "1":
     # genera la función esperada por la letra
-    obtener_datos_capitales()
+    obtener_datos_climaticos()
 else:
     # genera la función esperada por la letra
-    obtener_datos_capitales()
+    obtener_datos_climaticos()
 
 
