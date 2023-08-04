@@ -1,0 +1,139 @@
+Para este Ejercicio 4/2.
+que fue el mas complejo para mí. Creé este READ.ME y muestro mi raciocinio para 
+resolver el ejercicio paralelamente con Python y JS.
+
+En principio pensaba hacerlo con Javascript y luego pasarlo a python pero en la práctica terminé 
+por resolverlos paralelamente en la gran mayoría de los ejercicios. Con esto he aprendido 
+a pasar código de un lenguaje al otro.
+
+// Paso 1 - Inscribirse en OpenWeather y leer parte de la documentacion
+
+// Paso 2 - Identificar la Api que me sirve 
+
+// Paso 3 - Copiar el ejemplo en un async await en la carpeta "./js/ej_4-2.js"
+
+// Paso 3 - Averiguar los países de LATAM
+// Source: https://es.wikipedia.org/wiki/Am%C3%A9rica_Latina
+
+// Paso 4 - Obtener sus Capitales:
+creo el array
+const capitalesLatam = [
+    "BuenosAires,AR", 
+    "LaPaz,BO", 
+    "Brasilia,BR", 
+    "Santiago,Cl", 
+    "Bogota,CO", 
+    "LaHabana,CU", 
+    "Quito,EC",  
+    "Guatemala,GT",  
+    "Tegucigalpa,HN", 
+    "Mexico,MX", 
+    "Managua,NI", 
+    "Panama,PA", 
+    "Asuncion,PY", 
+    "Lima,PE", 
+    "Montevideo,UY", 
+    "Caracas,Ve"  
+]
+luego modifique el array, lo simplifique
+
+// Paso 5 - 
+// miro este video
+// "https://www.youtube.com/watch?v=nksauZe87Nw" PYTHON
+
+copio textual del video y me enfrento a dos problemas. 
+1 - no se  ver codigo python en mi vscode y en el tutorial lo da por hecho:
+solucion: 
+#segui estos pasos para entender como habilitar que corra el programa de python en vscode
+#https://learn.microsoft.com/en-us/training/modules/python-install-vscode/1-introduction 
+
+2 - requests no funciona
+solucion: 
+#voy a esta otra pagina para encontrar el comando que falta 
+#https://www.w3schools.com/python/module_requests.asp
+"pip install requests"
+No me anduvo. Mire un tutorial corto de instalacion de requests y lo instale correctamente
+funciono el archivo python supero la fase de error de import requests
+
+30/07
+// Paso 6 - 
+LOgros: api requests exitosas en js y python
+
+--------------- PARTE 2 -------------
+
+ordenar el codigo.
+
+Logro hacer la API request exitosamente trayendo los 
+datos pedidos en el ejercico en español
+
+
+--------------DUDAS-------------------------------
+no entiendo para que escribir un pais si igual debo retornar 
+un documento con todas las capitales latam y su info.
+
+como quiere que le retorne el documento? 
+como un dictionario, list, etc?
+
+Que significa que quiere que use scripts?
+en este video usan scripts hay q verlo:
+https://www.youtube.com/watch?v=PWZKTWJ9bJE
+
+un amigo me sugirió esta idea:
+crear un documento csv
+
+reviso capital por capital para arreglar la lista
+
+31/7 
+// Paso 7 
+Quiero usar una variable de entorno para proteger las keys
+miro estos videos
+https://www.youtube.com/watch?v=bcYKKX3ljlE&t=0s
+https://www.youtube.com/watch?v=2J3xbMkH2K4
+https://www.youtube.com/watch?v=IolxqkL7cD8
+
+
+ya mire videos de el y me gusta es muy prolijo y tiene un ingles claro.
+https://www.youtube.com/watch?v=vcDfNvC6Ui4
+el propone: 
+1- en terminal: "setx API_KEY 8755848487"
+2- en el archivo python 
+import os
+api_key=os.getenv("API_KEY")
+Esto me funciono.
+entre a powershell y accedi a esta carpeta para ver si esta mi variable de entorno
+no he logrado leer la variable de entorno.
+
+luego vi este video
+https://www.youtube.com/watch?v=IolxqkL7cD8
+
+
+y entre a: panel de control => sistemas y seguridad => sistema => (a la derecha en mi pc)
+configuracion avanzada del sistema => variables de entorno   
+
+Y esta mi API_KEY!!  que hice con "setx API_KEY fgfggfghf7f0e3a4d"
+pero tb puedo agregar variables de entorno directamente ahi
+Aqui se explica la necesidad de reiniciar el editor de codigo: probemos.
+------------
+solo me faltaba refrescar
+puedo acceder a la informacion con mi API_KEY protegida como variable de entorno en python
+
+// Paso 8 - 
+En python y organizo el codigo para que te pregunte 
+al entrar si deseas acceder a una capital o todas de latam
+
+1/8
+// Paso 9 - 
+Reordeno los archivos y separo carpetas dentro de cada desafio para cada ejercicio
+
+le pregunto a chatgpt sobre las dudas que tenia, eran:
+que significa: "crea un documento" ej2? y que significa usar scripts... ?
+ej3- construye un script que......
+me explico que masomenos significa usar el lenguaje en su estado puro 
+sin librerias o frameworks complejos.
+
+2/8
+hoy creamos el archivo csv con chatGPT. el codigo lo fui escribiendo yo pero preguntandole
+todo a chatGPT "como era para agregar y no reescribir?" y asi... las partes textuales 
+copiadas de 
+chatGPT estan especificadas en el codigo.
+Tuve que cambiar unos permisos en Windows para que me habilitara escribir el documento.

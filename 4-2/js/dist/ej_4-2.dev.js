@@ -37,9 +37,7 @@ var obtener_datos_climaticos = function obtener_datos_climaticos(capital) {
             var humedad = data['main']['humidity'];
             var max = data['main']['temp_max'];
             var min = data['main']['temp_min'];
-            var id = data['id'];
-            console.log(id);
-            console.log("Ciudad: " + capital + ", país: " + pais + ", descripción del clima: " + descripcion + ", sensación térmica: " + sensacion + ", presión: " + presion + ", humedad: " + humedad + ", temperatura mínima: " + min + ", temperatura máxima: " + max + ".");
+            console.log("Ciudad: " + capital + ", país: " + pais + ", descripción del clima: " + descripcion + ", sensación térmica: " + sensacion + "°, presión: " + presion + "hPa, humedad: " + humedad + "%, temperatura mínima: " + min + "°, temperatura máxima: " + max + "°.");
           }));
 
         case 10:

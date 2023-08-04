@@ -1,47 +1,11 @@
-para este ejercicio Aproveche una pagina que cree el año pasado que renderizaba en 
-la pantalla unas fotos de pixabay . hice esta pagina en un curso de udemy con juan de la torre.
-Uno de mis primeros cursos de programacion.
-Me traje su index.html, su css que es de tailwind, y su javascript 
-me dedique a modificar el javascript para adaptarlo a la peticion de este ejercicio.
-Ademas aproveche para reutilizar codigo.
+para este ejercicio Aproveché una página que cree el año pasado que renderizaba en 
+la pantalla unas fotos de pixabay . Hice esta página en un curso de udemy 
+con Juan de la Torre.
+Uno de mis primeros cursos de programación.
+Me traje su index.html, su css que es de tailwind, y su javascript.
+Me dediqué a modificar el javascript para adaptarlo a la petición de este ejercicio.
+Tambien modifique cositas minimas en html y las clases de tailwind para 
+que se ajustara mejor al proyecto.
+Además aproveché para reutilizar codigo.
 
-le pregunte a chatgpt sobre las dudas que tenia, eran:
-que significa crea un documento ej2? y que significa usar script... 
-ej3- construye un script que......
-me devolvio esto: 
-Exacto, cuando se menciona que "valoramos el uso de scripts" en el "Ejercicio 3," se refiere a que prefieren que no utilices frameworks o bibliotecas complejas como pandas para resolver el problema. En lugar de eso, lo ideal es que escribas un código sencillo y modular utilizando las bibliotecas estándar del lenguaje (Python o JavaScript) para realizar las tareas requeridas.
-
-Para guardar archivos en formato CSV en Python, puedes seguir estos pasos:
-
-1. Importa el módulo CSV: En Python, existe un módulo llamado `csv` que facilita la escritura y lectura de archivos CSV.
-
-2. Abre un archivo CSV en modo de escritura: Puedes utilizar la función `open()` para abrir un archivo en modo de escritura ('w') y crear un objeto de escritura de CSV utilizando `csv.writer`.
-
-3. Escribe los datos en el archivo: Utiliza los métodos proporcionados por el objeto de escritura de CSV para escribir filas de datos en el archivo.
-
-Aquí hay un ejemplo de cómo podrías hacerlo:
-
-```python
-import csv
-
-def guardar_datos_en_csv(datos, nombre_archivo):
-    with open(nombre_archivo, 'w', newline='') as archivo_csv:
-        escritor_csv = csv.writer(archivo_csv, delimiter=';')  # Puedes cambiar ';' por ',' si prefieres separación por comas.
-        escritor_csv.writerow(['Nombre de la capital', 'País', 'Descripción del clima', 'Sensación térmica', 'Presión', 'Humedad', 'Temperatura mínima', 'Temperatura máxima'])
-        
-        for dato in datos:
-            escritor_csv.writerow(dato)
-
-# Ejemplo de uso:
-datos_climaticos = [
-    ['Caracas', 'Venezuela', 'Despejado', '30°C', '1015 hPa', '60%', '22°C', '33°C'],
-    ['Buenos Aires', 'Argentina', 'Nublado', '15°C', '1012 hPa', '70%', '12°C', '18°C'],
-    # Agrega más filas de datos aquí...
-]
-
-guardar_datos_en_csv(datos_climaticos, 'datos_climaticos.csv')
-```
-
-Este código creará un archivo llamado "datos_climaticos.csv" con los datos climáticos en formato CSV. Cada fila en el archivo corresponderá a los datos de una capital, y los campos estarán separados por puntos y comas (o comas, según lo elijas).
-
-Si estás trabajando con JavaScript, también es posible guardar datos en formato CSV utilizando bibliotecas específicas, como "papaparse" o "fast-csv," pero para mantenerlo simple y sin usar bibliotecas adicionales, puedes escribir los datos directamente en un archivo de texto plano en el formato deseado.
+Abre ej3.html y coloca la ciudad en el input
