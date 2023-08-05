@@ -4,8 +4,9 @@
 # //  los datos climáticos de todas las ciudades capitales de LATAM, en español.  // //
 # El programa debe devolver un documento separado por puntos y comas de todas las capitales con datos como:
 
-#Importo esta libreria para hacer requests
-# importo os para acceder a mi variable de entorno
+#Importo esta libreria para hacer requests  
+#importa pip install requests en tu terminal
+# importo os para acceder a mi variable de entorno  
 # importo csv
 import requests
 import os
@@ -44,6 +45,10 @@ capitalesLatam = [
 # la informacion
 def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
     # aqui accedo a mi variable de entorno
+    # Puedes obtener una key en esta pagina:# 
+    #https://home.openweathermap.org/users/sign_up 
+    #o puedes sustituir el codigo de la api_key por este:
+    #api_key = "10971b499be61b351760e8d57f0e3a4d"
     api_key = os.getenv("API_KEY")
 
     # construccion de la url completa con la base url la api key la city,

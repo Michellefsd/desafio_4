@@ -1,8 +1,4 @@
-    // if(process.env.NODE_ENV !== 'production'){
-    //     require('dotenv').config();
-    // }
-    // const key = process.env.API_KEY;
-// const key = "10971b499be61b351760e8d57f0e3a4d"
+const key = "10971b499be61b351760e8d57f0e3a4d"
 const capitalesLatam = [
     "buenos aires", 
     "la paz", 
@@ -79,7 +75,7 @@ const obtener_datos_climaticos = async(capital) => {
         const link = document.createElement("a");
         link.setAttribute("href", encodedUri);
         link.setAttribute("download", "datos_climaticos_latam.csv");
-        document.body.appendChild(link); // Required for Firefox
+        document.body.appendChild(link); // Requerido por Firefox
         link.click();
     //// fin del código generado por ChatGPT
     }

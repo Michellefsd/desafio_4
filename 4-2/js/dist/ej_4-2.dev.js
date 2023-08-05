@@ -1,10 +1,6 @@
 "use strict";
 
-// if(process.env.NODE_ENV !== 'production'){
-//     require('dotenv').config();
-// }
-// const key = process.env.API_KEY;
-// const key = "10971b499be61b351760e8d57f0e3a4d"
+var key = "10971b499be61b351760e8d57f0e3a4d";
 var capitalesLatam = ["buenos aires", "la paz", "brasilia", "santiago de chile", "san jose,cr", "bogota", "habana", "quito", "san salvador", "guatemala", "Port-au-Prince", "tegucigalpa", "mexico,mx", "managua", "panama", "asuncion", "lima", "Santo Domingo", "montevideo", "caracas"]; //Funcion//
 
 var obtener_datos_climaticos = function obtener_datos_climaticos(capital) {
@@ -118,7 +114,7 @@ var obtener_datos_climaticos = function obtener_datos_climaticos(capital) {
             link = document.createElement("a");
             link.setAttribute("href", encodedUri);
             link.setAttribute("download", "datos_climaticos_latam.csv");
-            document.body.appendChild(link); // Required for Firefox
+            document.body.appendChild(link); // Requerido por Firefox
 
             link.click(); //// fin del código generado por ChatGPT
           }

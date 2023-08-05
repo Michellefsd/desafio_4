@@ -1,7 +1,3 @@
-# esta me habia funcionado con un codigo bien simple pero en una prueba vi que daba error 
-# y tuve que rehacerlo
-
-
 # mi lista de prueba
 myList = [0, 1, 6, 19, 25.5, 34, 36, 39, 52, 65, 73, 81]
 
@@ -28,6 +24,7 @@ elif tiponumero == "2":
 ####  pedazo de codigo generado por ChatGPT para solucionar el error que era porque no veia lo 
 # escrito por el usuario como una variable sino como un string
 # convertir el nombre de la lista a una variable usando globals()
+# vulnerable a codigo malicioso Ojo
 lista = globals()[nombre_lista]
 ####  fin del codigo generado por chatGPT
 
