@@ -44,8 +44,6 @@ capitalesLatam = [
 # la informacion
 def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
     # aqui accedo a mi variable de entorno
-# si necesitan la key es esta: "10971b499be61b351760e8d57f0e3a4d" 
-# Puedes sustituir la variable de entorno por esto para que te funcione
     api_key = os.getenv("API_KEY")
 
     # construccion de la url completa con la base url la api key la city,
@@ -85,7 +83,7 @@ def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
     }
 
 def obtener_datos_climaticos():
-    # datos_climaticos_capitales fue sugerido por chatGPT
+#### datos_climaticos_capitales fue sugerido por chatGPT
     datos_climaticos_capitales = []
     for capital in capitalesLatam:
         datos = obtener_datos_climaticos_de_solo_una_ciudad(capital)
@@ -102,7 +100,7 @@ def obtener_datos_climaticos():
         writer.writeheader()
         # escribo datos en una linea para cada capital
         writer.writerows(datos_climaticos_capitales)
-
+#### fin del codigo generado por chatGPT
 # funcion que genera lo que pide el usuario        
 if userWants == "2" :
     CITY = input("Elige una ciudad: EJ: Montevideo \n")

@@ -3,7 +3,7 @@ import requests
 # importo os xa acceder a mi variable de entorno
 import os
 
-# accedo a mi variable deentorno
+# accedo a mi variable de entorno
 api_key = os.getenv("API_KEY")
 # url base
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"

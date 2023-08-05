@@ -25,11 +25,11 @@ if tiponumero == "1":
 elif tiponumero == "2":
     numero = float(input("Cuál es el número al que deseas acceder en ella?\n"))
 
-#pedazo de codigogenerado por ChatGPT para solucionar el error que era porque no veia lo 
+####  pedazo de codigo generado por ChatGPT para solucionar el error que era porque no veia lo 
 # escrito por el usuario como una variable sino como un string
 # convertir el nombre de la lista a una variable usando globals()
 lista = globals()[nombre_lista]
-#fin del codigo generado por chatGPT
+####  fin del codigo generado por chatGPT
 
 # usamos los valores puestos por usuario como parametros
 indice = buscar_valor(lista, numero)

@@ -1,4 +1,8 @@
-const key = "10971b499be61b351760e8d57f0e3a4d"
+    // if(process.env.NODE_ENV !== 'production'){
+    //     require('dotenv').config();
+    // }
+    // const key = process.env.API_KEY;
+// const key = "10971b499be61b351760e8d57f0e3a4d"
 const capitalesLatam = [
     "buenos aires", 
     "la paz", 
@@ -25,11 +29,11 @@ const capitalesLatam = [
 
 //Funcion//
 const obtener_datos_climaticos = async(capital) => {
-/////////     // pedazo de codigo generado por chatGPT///////////////////////
+////    // pedazo de codigo generado por chatGPT      /////////
     const capitales = capital ? [capital] : capitalesLatam
     const datos_climaticos_capitales = [];
     for (const ciudad of capitales) {
-/////////////////////////fin del codigo generado chatGPT///////////////////////
+////         fin del codigo generado chatGPT         //////////
 
         const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&appid=${key}&units=metric&lang=es`)
         .then(response => response.json())
@@ -56,25 +60,30 @@ const obtener_datos_climaticos = async(capital) => {
             });
         });
     }
-// Pedazo de código generado por chatGPT
-    // Genero el contenido  de CSV 
-    let csvContent = "data:text/csv;charset=utf-8,";
-    const headers = ["Capital", "Pais", "Descripcion", "Sensacion", "Presion", "Humedad", "Max", "Min"];
-    csvContent += headers.join(";") + "\n";
-
-    datos_climaticos_capitales.forEach(datos => {
-        const values = headers.map(header => datos[header]);
-        csvContent += values.join(";") + "\n";
-    });
-
-    // creo un link y genero la descarga
-    const encodedUri = encodeURI(csvContent);
-    const link = document.createElement("a");
-    link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "datos_climaticos_latam.csv");
-    document.body.appendChild(link); // Required for Firefox
-    link.click();
-// fin del código generado por ChatGPT
+    // con este if hago que solo me arme el documento 
+    // cuando quiere la lista completa de capitales de latinoamerica
+    if (capitales == capitalesLatam) {
+    //// Pedazo de código generado por chatGPT
+    //// Genero el contenido  de CSV 
+        let csvContent = "data:text/csv;charset=utf-8,";
+        const headers = ["Capital", "Pais", "Descripcion", "Sensacion", "Presion", "Humedad", "Max", "Min"];
+        csvContent += headers.join(";") + "\n";
+    
+        datos_climaticos_capitales.forEach(datos => {
+            const values = headers.map(header => datos[header]);
+            csvContent += values.join(";") + "\n";
+        });
+    
+        // creo un link y genero la descarga
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "datos_climaticos_latam.csv");
+        document.body.appendChild(link); // Required for Firefox
+        link.click();
+    //// fin del código generado por ChatGPT
+    }
+  
 }
 
 
