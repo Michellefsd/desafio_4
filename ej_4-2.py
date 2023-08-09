@@ -48,8 +48,8 @@ def obtener_datos_climaticos_de_solo_una_ciudad(CITY):
     # Puedes obtener una key en esta pagina:# 
     #https://home.openweathermap.org/users/sign_up 
     #o puedes sustituir el codigo de la api_key por este:
-    #api_key = "10971b499be61b351760e8d57f0e3a4d"
-    api_key = os.getenv("API_KEY")
+    api_key = "10971b499be61b351760e8d57f0e3a4d"
+    # api_key = os.getenv("API_KEY")
 
     # construccion de la url completa con la base url la api key la city,
     # las medidas usadas en latinoamerica y la traducción al idioma español
