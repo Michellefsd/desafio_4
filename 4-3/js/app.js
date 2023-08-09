@@ -17,10 +17,10 @@ window.onload = () => {
 // si tieneuna ciudad mostrara la ciudad
 function validarFormulario(e) {
     e.preventDefault();
-    if(terminoBusqueda === '') {
-        imprimirAlerta('Agrega una capital');
-        return;
-    }
+    // if(terminoBusqueda === '') {
+    //     imprimirAlerta('Agrega una capital');
+    //     return;
+    // }
     buscarCapital();
 } 
 

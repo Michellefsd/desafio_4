@@ -16,12 +16,10 @@ window.onload = function () {
 
 
 function validarFormulario(e) {
-  e.preventDefault();
-
-  if (terminoBusqueda === '') {
-    imprimirAlerta('Agrega una capital');
-    return;
-  }
+  e.preventDefault(); // if(terminoBusqueda === '') {
+  //     imprimirAlerta('Agrega una capital');
+  //     return;
+  // }
 
   buscarCapital();
 } // definimos como se mostrara la alerta
